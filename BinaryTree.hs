@@ -19,7 +19,7 @@ trace' ( Rght: path )( BNode _ _ right )= trace' path right
 
 
 {- haveAny p tree determines whether any of the labels in tree
-   satisfy the predicate p
+   satisfy predicate p
 -}
 
 haveany:: (a -> Bool) -> BTree a -> Bool

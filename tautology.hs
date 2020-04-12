@@ -1,3 +1,4 @@
+{- defining proposition data type -}
 data Prop = Const Bool
             | Var Char
             | Not Prop

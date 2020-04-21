@@ -1,0 +1,44 @@
+length' :: [a] -> Int
+length' [] = 0
+length' (x:xs) = 1 + length xs
+
+--length function using list comprehension
+length2 :: [a] -> Int
+length2 [] = 0
+length2 xs = sum [1 | x <- xs]
+
+--cartesian product
+cp :: [[a]] -> [[a]]
+cp [] = [[]]
+cp (xs:xss) = [x:ys | x<- xs, ys <- cp xss]
+
+--finding nth prime
+
+--find list of prime numbers
+primes :: Int -> [Int]
+primes n = [x | x <- [2..n], prime x]
+
+--find if particular number is a prime
+prime :: Int -> Bool
+prime n = factors n == [1,n] 
+
+--find factors for an integer
+factors :: Int -> [Int]
+factors n = [k | k<-[1..n], n `mod` k == 0]
+
+--finding position of prime number
+position :: Int -> [Int] -> [Int]
+position x xs = [ i | (i, n) <- zip [1..] xs, x == n]
+
+--finding nth composite number
+composites :: Int -> [Int]
+composites n = [x | x <- [2..n], composite x] 
+
+
+composite :: Int -> Bool
+composite n = factors n /= [1,n]
+
+
+
+
+
